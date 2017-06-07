@@ -1,0 +1,58 @@
+# Project: P1
+# Makefile created by Dev-C++ 5.8.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o SahulatCard.o date.o money.o account.o flexrupees.o mealplanfund.o mealplan.o transfermealplanfund.o transaction.o student.o
+LINKOBJ  = main.o SahulatCard.o date.o money.o account.o flexrupees.o mealplanfund.o mealplan.o transfermealplanfund.o transaction.o student.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib32" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib32" -static-libgcc -m32
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = P1.exe
+CXXFLAGS = $(CXXINCS) -m32 -std=c++11
+CFLAGS   = $(INCS) -m32 -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+SahulatCard.o: SahulatCard.cpp
+	$(CPP) -c SahulatCard.cpp -o SahulatCard.o $(CXXFLAGS)
+
+date.o: date.cpp
+	$(CPP) -c date.cpp -o date.o $(CXXFLAGS)
+
+money.o: money.cpp
+	$(CPP) -c money.cpp -o money.o $(CXXFLAGS)
+
+account.o: account.cpp
+	$(CPP) -c account.cpp -o account.o $(CXXFLAGS)
+
+flexrupees.o: flexrupees.cpp
+	$(CPP) -c flexrupees.cpp -o flexrupees.o $(CXXFLAGS)
+
+mealplanfund.o: mealplanfund.cpp
+	$(CPP) -c mealplanfund.cpp -o mealplanfund.o $(CXXFLAGS)
+
+mealplan.o: mealplan.cpp
+	$(CPP) -c mealplan.cpp -o mealplan.o $(CXXFLAGS)
+
+transfermealplanfund.o: transfermealplanfund.cpp
+	$(CPP) -c transfermealplanfund.cpp -o transfermealplanfund.o $(CXXFLAGS)
+
+transaction.o: transaction.cpp
+	$(CPP) -c transaction.cpp -o transaction.o $(CXXFLAGS)
+
+student.o: student.cpp
+	$(CPP) -c student.cpp -o student.o $(CXXFLAGS)
